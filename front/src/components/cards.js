@@ -3,9 +3,6 @@ class Cards extends HTMLElement {
     super()
     this.shadow = this.attachShadow({ mode: 'open' })
     this.data = []
-    // this.text = this.getAttribute('text')
-    // this.width = this.getAttribute('width')
-    // this.height = this.getAttribute('height')
   }
 
   async connectedCallback() {
@@ -18,7 +15,7 @@ class Cards extends HTMLElement {
     this.data = [
       {
         title: "Gratis",
-        price: "$0 /mes",
+        subtitle: "$0 /mes",
         list: [
           "10 usuarios incluidos",
           "2 GB de almacenamiento",
@@ -29,7 +26,7 @@ class Cards extends HTMLElement {
       },
       {
         title: "Pro",
-        price: "$15 /mes",
+        subtitle: "$15 /mes",
         list: [
           "20 usuarios incluidos",
           "10 GB de almacenamiento",
@@ -40,7 +37,7 @@ class Cards extends HTMLElement {
       },
       {
         title: "Empresa",
-        price: "$29 /mes",
+        subtitle: "$29 /mes",
         list: [
           "30 usuarios incluidos",
           "15 GB de almacenamiento",
@@ -176,7 +173,7 @@ class Cards extends HTMLElement {
 
       const cardPriceSpan = document.createElement('span');
       cardContent.appendChild(cardPriceSpan);
-      cardPriceSpan.textContent = product.price;
+      cardPriceSpan.textContent = product.subtitle;
 
       const cardList = document.createElement('div');
       cardContent.appendChild(cardList);
