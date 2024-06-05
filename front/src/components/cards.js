@@ -58,7 +58,6 @@ class Cards extends HTMLElement {
       <style>
         .cards{
           display: flex;
-          align-items: center;
           justify-content: center;
           gap: 2rem;
         }
@@ -68,30 +67,27 @@ class Cards extends HTMLElement {
           align-items: center;
           border-radius: 0.4rem;
           flex-direction: column;
-          max-width: 15rem;
+          max-width: 18rem;
           border: 1px solid hsl(0, 1%, 63%);
         }
 
         .card-title{
           background-color: hsl(240, 1%, 34%);
           max-height: 5rem;
-          min-width: 15rem;
-        }
-
-        h2{
-          text-align: center;
+          min-width: 18rem;
         }
 
         h2, span, li{
           color: hsl(0, 0%, 100%);
           font-family: "Lato", sans-serif;
+          text-align: center;
         }
 
         .card-content{
           display: flex;
           align-items: center;
           flex-direction: column;
-          padding: 2rem 0;
+          padding-top: 2rem;
         }
 
         span{
@@ -100,19 +96,32 @@ class Cards extends HTMLElement {
 
         ul{
           list-style-type: none;
-          margin-right: 0;
-          padding-right: 0;
+          padding: 0 1rem;
         }
 
-        .register-button {
+        .card-button{
+          display: flex;
+          margin-top: auto;
+          padding: 1.5rem 0;
+        }
+
+        .buttons{
           background-color: hsl(204, 100%, 47%);
           border: none;
           border-radius: 0.2rem;
           color: hsl(0, 0%, 100%);
           font-size: 13px;
           font-weight: 300;
+          min-width: 15rem;
           outline: none;
-          padding: 0.5rem 2rem;
+          padding: 0.8rem 2.8rem;
+          cursor: pointer;
+        }
+
+        .buttons:hover{
+          background-color: transparent;
+          border: 1px solid hsl(204, 100%, 47%);
+          color: hsl(204, 100%, 47%);
         }
       </style>
 
@@ -160,13 +169,13 @@ class Cards extends HTMLElement {
       });
     
       const cardButtonContainer = document.createElement('div');
-      cardContent.appendChild(cardButtonContainer);
+      card.appendChild(cardButtonContainer);
       cardButtonContainer.classList.add('card-button');
     
       const cardButton = document.createElement('button');
       cardButtonContainer.appendChild(cardButton);
       cardButton.textContent = product.buttonText;
-      cardButton.classList.add('register-button')
+      cardButton.classList.add('buttons')
     });
   }
 }
